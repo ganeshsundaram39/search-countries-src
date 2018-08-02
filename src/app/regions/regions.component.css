@@ -1,0 +1,23 @@
+.regions {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.region {
+  height: 100vh;
+  display: table;
+}
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+.region img {
+  width: 400px;
+  height: 400px;
+}
+
+.name {
+  font-size: 3rem;
+  text-transform: capitalize;
+  color: rgba(0, 0, 0, 0.8);
+}
