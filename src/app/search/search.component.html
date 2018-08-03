@@ -1,0 +1,14 @@
+<div class="close">
+    <a (click)="closeSearch()">
+        <i class="icon-cancel"></i>
+    </a>
+</div>
+<form (ngSubmit)="onSubmit()" #f="ngForm">
+    <input type="text" name="search" [(ngModel)]="searchText" placeholder="Type-in a Country">
+    <a type="submit">
+        <i class="icon-right"></i>
+    </a>
+</form>
+<div class="search__results">
+    <div class="result" *ngFor="let result of results|searchResults:searchText|slice:0:10">{{result}}</div>
+</div>

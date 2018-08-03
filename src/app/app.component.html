@@ -1,4 +1,9 @@
 <div class="container">
-    <app-navbar></app-navbar>
+    <div class="search">
+        <a (click)="openSearch=true" *ngIf="!openSearch">
+            <i class="icon-search"></i>
+        </a>
+    </div>
+    <app-search (closedClicked)="openSearch = $event" *ngIf="openSearch"></app-search>
     <app-regions></app-regions>
 </div>

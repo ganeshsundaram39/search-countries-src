@@ -1,23 +1,22 @@
-.regions {
-  max-width: 800px;
-  margin: 0 auto;
-}
 .region {
   height: 100vh;
-  display: table;
-}
-
-.middle {
-  display: table-cell;
-  vertical-align: middle;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .region img {
   width: 400px;
   height: 400px;
 }
-
+.middle {
+  display: flex;
+  align-items: center;
+}
 .name {
   font-size: 3rem;
   text-transform: capitalize;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.9);
+  margin-left: 4%;
+  letter-spacing: 2px;
 }

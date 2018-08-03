@@ -1,0 +1,43 @@
+.close {
+  height: 60px;
+  position: absolute;
+  width: 100%;
+  text-align: right;
+  right: 1%;
+  top: 2%;
+}
+.close i {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 300ms;
+}
+.close i:hover {
+  color: #fff;
+}
+form {
+  margin: 15% 0 0 0;
+  text-align: center;
+}
+[name="search"] {
+  padding-bottom: 1%;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  border-bottom: 2px solid #fff;
+  width: 50%;
+}
+[type="submit"] {
+  display: inline-block;
+  transform: translateX(-100%);
+}
+[name="search"],
+[type="submit"] i {
+  color: #fff;
+  font-size: 2rem;
+  letter-spacing: 5px;
+  text-transform: capitalize;
+}
+
+::placeholder {
+  color: var(--base);
+}
