@@ -7,6 +7,6 @@ export class SearchResultsPipe implements PipeTransform {
   transform(value: any, searchedText: string): any {
     if (!searchedText) return null;
 
-    return value.filter(name => name.match(new RegExp(searchedText, "gi")));
+    return value.filter(v => v.name.match(new RegExp(searchedText, "gi")));
   }
 }

@@ -10,8 +10,10 @@ export class InfoProcessingService {
   constructor(private _httpService: AllInfoHttpService) {}
   public getDataFromApi(): {}[] {
     this._httpService.getAllData().subscribe(
-      (response: { name?: string }[]) => {
-        this.names = response.map(r => r.name);
+      (response: { name?: string; flag?: string }[]) => {
+        this.names = response.map(r => {
+          return { name: r.name, flag: r.flag };
+        });
         this.data.push(...response);
       },
       error => {

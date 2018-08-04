@@ -5,12 +5,32 @@
 
 .search {
   position: fixed;
+  top: 0;
   width: 100%;
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.1);
+  height: 70px;
+  border-top: 5px solid var(--base);
 }
 
+.search a,
 .search i {
   font-size: 2rem;
+}
+.instruction {
+  font-size: 1.6rem;
+  margin-left: 1%;
+  color: rgba(0, 0, 0, 0.9);
+  border-left: 4px solid #ffeb3b;
+  padding: 5px;
+}
+
+.search a {
+  margin-right: 1%;
+}
+.search i {
   cursor: pointer;
   transition: all 300ms;
 }
@@ -18,9 +38,7 @@
 .search i:hover {
   color: rgba(0, 0, 0, 0.85);
 }
-.icon-search:before {
-  margin: 1% 2% 0 0;
-}
+
 app-search {
   position: fixed;
   top: 0;

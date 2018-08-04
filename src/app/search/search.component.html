@@ -4,11 +4,14 @@
     </a>
 </div>
 <form (ngSubmit)="onSubmit()" #f="ngForm">
-    <input type="text" name="search" [(ngModel)]="searchText" placeholder="Type-in a Country">
+    <input type="text" name="search" [(ngModel)]="searchText" placeholder="Type-in a Country" autofocus>
     <a type="submit">
         <i class="icon-right"></i>
     </a>
 </form>
 <div class="search__results">
-    <div class="result" *ngFor="let result of results|searchResults:searchText|slice:0:10">{{result}}</div>
+    <div class="result" *ngFor="let result of results|searchResults:searchText|slice:0:10">
+        <img [src]="result.flag" [alt]="result.name">
+        <span class="name">{{result.name}}</span>
+    </div>
 </div>

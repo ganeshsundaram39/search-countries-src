@@ -41,3 +41,37 @@ form {
 ::placeholder {
   color: var(--base);
 }
+
+.search__results {
+  display: flex;
+  justify-content: start;
+  width: 80%;
+  margin: 2% auto;
+  flex-wrap: wrap;
+}
+
+.result {
+  margin: 1%;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+.result:hover {
+  transform: translateY(-4px);
+}
+
+.result img {
+  width: 2rem;
+  height: 1rem;
+  margin-right: 7px;
+}
+
+.name {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: #fff;
+}
