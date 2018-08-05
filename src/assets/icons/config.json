@@ -25,6 +25,18 @@
       "src": "fontawesome"
     },
     {
+      "uid": "5d2d07f112b8de19f2c0dbfec3e42c05",
+      "css": "spin5",
+      "code": 59448,
+      "src": "fontelico"
+    },
+    {
+      "uid": "4109c474ff99cad28fd5a2c38af2ec6f",
+      "css": "filter",
+      "code": 61616,
+      "src": "fontawesome"
+    },
+    {
       "uid": "ef73a0080d5b9556cb0eeb9350b5ff73",
       "css": "react-brands",
       "code": 59394,

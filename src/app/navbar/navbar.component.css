@@ -1,0 +1,135 @@
+.navbar {
+  height: 95px;
+  border-top: 5px solid var(--base);
+  background: rgba(0, 0, 0, 0.9);
+}
+
+form {
+  height: 100%;
+}
+
+.search__container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: space-evenly;
+}
+
+.search__input--wrapper {
+  width: 30%;
+}
+
+.filter,
+[name="search"] {
+  outline: 0;
+  border: 0;
+  background: transparent;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+
+[name="search"] {
+  border-bottom: 2px solid var(--base);
+  color: rgba(255, 255, 255, 0.9);
+  padding-bottom: 1%;
+  width: 50%;
+  transition: width 300ms ease-in;
+}
+
+[name="search"]:focus {
+  width: 70%;
+}
+
+[name="search"] + a {
+  transform: translate(-100%);
+  display: inline-block;
+}
+
+[name="search"] + a > i {
+  font-size: 1.1rem;
+  color: var(--base);
+}
+[name="search"]:focus + a > i {
+  color: rgba(255, 255, 255, 0.9);
+}
+::placeholder {
+  color: var(--base);
+}
+
+.filter {
+  color: var(--base);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.filter,
+.filter > .icon-filter:before {
+  transition: color 300ms;
+}
+.filter:hover,
+.filter:hover > .icon-filter:before {
+  color: rgba(255, 255, 255, 0.9);
+}
+.icon-filter:before {
+  margin: 0;
+  color: var(--base);
+  margin-left: 3px;
+}
+.filter__container {
+  height: 140px;
+  background: rgba(0, 0, 0, 0.1);
+  transform: rotateX(90deg);
+  transform-origin: top;
+  transition: transform 500ms;
+}
+
+.show__filter {
+  transform: rotateX(0deg);
+}
+
+.filter__container {
+  display: flex;
+  /* justify-content: space-around; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.category__radio {
+  margin: 4% 0;
+}
+.category__radio label {
+  font-size: 1.3rem;
+  font-weight: 400;
+  cursor: pointer;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  transition: color 300ms ease-in;
+}
+
+.category__radio input {
+  margin-right: 5px;
+  position: relative;
+  top: -3px;
+  display: none;
+}
+
+.category__selected {
+  color: var(--base);
+}
+
+.category__not--selected {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+@media (min-width: 576px) {
+  .filter__container {
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  .show__sub--nav {
+    height: 150px;
+  }
+  .category__radio {
+    margin: 0;
+  }
+}

@@ -2,7 +2,7 @@
     <div class="region" *ngFor="let region of regions">
         <div class="middle">
             <img [src]="getImage(region)" alt="getAlt(region)">
-            <span class="name">{{region}}</span>
+            <span class="name" [routerLink]="['/results','region']" [queryParams]="{q:region}">{{region}}</span>
         </div>
     </div>
 </div>

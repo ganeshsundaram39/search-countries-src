@@ -6,8 +6,19 @@ import { NavbarComponent } from "./navbar/navbar.component";
 import { RegionsComponent } from "./regions/regions.component";
 import { SearchComponent } from "./search/search.component";
 import { FormsModule } from "@angular/forms";
-import { HttpClientModule } from "../../node_modules/@angular/common/http";
-import { SearchResultsPipe } from './search-results.pipe';
+import { HttpClientModule } from "@angular/common/http";
+import { SearchResultsPipe } from "./search-results.pipe";
+
+import { Routes, RouterModule } from "@angular/router";
+import { ResultsComponent } from "./results/results.component";
+import { HomeComponent } from "./home/home.component";
+import { DetailsComponent } from "./details/details.component";
+
+const appRoutes: Routes = [
+  { path: "", component: HomeComponent, pathMatch: "full" },
+  { path: "results/:filter", component: ResultsComponent },
+  { path: "details/:name", component: DetailsComponent }
+];
 
 @NgModule({
   declarations: [
@@ -15,9 +26,17 @@ import { SearchResultsPipe } from './search-results.pipe';
     NavbarComponent,
     RegionsComponent,
     SearchComponent,
-    SearchResultsPipe
+    SearchResultsPipe,
+    ResultsComponent,
+    HomeComponent,
+    DetailsComponent
   ],
-  imports: [BrowserModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

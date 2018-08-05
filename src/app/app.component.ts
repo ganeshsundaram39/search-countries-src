@@ -5,6 +5,4 @@ import { Component } from "@angular/core";
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"]
 })
-export class AppComponent {
-  openSearch: Boolean = false;
-}
+export class AppComponent {}

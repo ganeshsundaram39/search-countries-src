@@ -1,0 +1,8 @@
+<div class="search" *ngIf="!openSearch">
+    <div class="instruction">Select a Region:</div>
+    <a (click)="openSearch=true">
+        <i class="icon-search"></i>
+    </a>
+</div>
+<app-search (closedClicked)="openSearch = $event" *ngIf="openSearch"></app-search>
+<app-regions *ngIf="!openSearch"></app-regions>

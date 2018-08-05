@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400");
 
 * {
   margin: 0;
@@ -9,8 +9,4 @@
   color: #555;
   box-sizing: border-box;
   --base: #31672f;
-}
-
-body {
-  border-top: 5px solid var(--base);
 }
