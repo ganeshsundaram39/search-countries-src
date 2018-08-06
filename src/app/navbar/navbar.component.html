@@ -2,7 +2,8 @@
     <form (ngSubmit)="onSubmit()" #f="ngForm">
         <div class="search__container">
             <div class="search__input--wrapper">
-                <input type="text" name="search" [(ngModel)]="searchedText" placeholder="Search" autofocus>
+                <input type="text" name="search" [(ngModel)]="searchedText" placeholder="Search" (keyup)="userEnteringText()" (change)="userEnteringText()"
+                    autofocus>
                 <a type="submit">
                     <i class="icon-right"></i>
                 </a>

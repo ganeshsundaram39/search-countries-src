@@ -18,13 +18,11 @@ export class SearchComponent implements OnInit {
   @Output() closedClicked = new EventEmitter<boolean>();
   searchedText: string = "";
   results: {}[] = [];
-  constructor(private _dataStore: DataStorageService) {
-    setTimeout(() => {
-      this.results = this._dataStore.names;
-    }, 2000);
-  }
+  constructor(private _dataStore: DataStorageService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.results = this._dataStore.shortDataStore;
+  }
   onSubmit() {}
   closeSearch() {
     this.closedClicked.emit(false);

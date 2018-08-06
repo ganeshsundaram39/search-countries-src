@@ -1,20 +1,40 @@
 import { Injectable } from "@angular/core";
-import { InfoProcessingService } from "./info-processing.service";
+import { AllInfoHttpService } from "./all-info-http.service";
 
+interface shortDataType {
+  name?: string;
+  flag?: string;
+}
 @Injectable({
   providedIn: "root"
 })
 export class DataStorageService {
-  private _dataStore: {}[] = [];
+  private _fullDataStore: {}[] = [];
+  private _shortDataStore: {}[] = [];
 
-  constructor(private _processedData: InfoProcessingService) {
-    this._dataStore = this._processedData.getDataFromApi();
-  }
+  constructor(private _httpService: AllInfoHttpService) {}
 
-  get dataStore(): {}[] {
-    return this._dataStore;
+  processData() {
+    this._httpService.getAllData().subscribe(
+      (response: shortDataType[]) => {
+        this._shortDataStore = response.map(r => {
+          return {
+            name: r.name,
+            flag: r.flag
+          };
+        });
+
+        this._fullDataStore.push(...response);
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
-  get names(): {}[] {
-    return this._processedData.getNamesFromApi();
+  get longDataStore(): {}[] {
+    return this._fullDataStore;
+  }
+  get shortDataStore(): {}[] {
+    return this._shortDataStore;
   }
 }

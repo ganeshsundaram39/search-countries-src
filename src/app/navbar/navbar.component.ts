@@ -31,6 +31,7 @@ export class NavbarComponent implements OnInit {
 
   userSelectingCategory() {
     // emit the selected category by user
+    console.log(this.searchedType);
     this.categorySelecting.emit(this.searchedType);
   }
 }

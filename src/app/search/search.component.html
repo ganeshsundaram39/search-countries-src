@@ -4,13 +4,13 @@
     </a>
 </div>
 <form (ngSubmit)="onSubmit()" #f="ngForm">
-    <input type="text" name="search" [(ngModel)]="searchText" placeholder="Type-in a Country" autofocus>
-    <a type="submit" [routerLink]="['/results','all']" [queryParams]="{q:searchText}">
+    <input type="text" name="search" [(ngModel)]="searchedText" placeholder="Type-in a Country" autofocus>
+    <a type="submit" [routerLink]="['/results','all']" [queryParams]="{q:searchedText}">
         <i class="icon-right"></i>
     </a>
 </form>
 <div class="search__results">
-    <div class="result" *ngFor="let result of results|searchResults:searchText|slice:0:10" [routerLink]="['/details',result.name]">
+    <div class="result" *ngFor="let result of results|searchResults:searchedText:'name'|slice:0:10" [routerLink]="['/details',result.name]">
         <img [src]="result.flag" [alt]="result.name">
         <span class="name">{{result.name}}</span>
     </div>

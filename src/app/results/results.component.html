@@ -1,1 +1,10 @@
 <app-navbar [searchedText]="searchedText" [searchedType]="searchedType" (enteringText)="userEnteringText($event)" (categorySelecting)="userSelectingCategory($event)"></app-navbar>
+
+<div class="loader" *ngIf="showLoader">
+    <i class="icon-spin5"></i>
+</div>
+<div class="results">
+    <div class="card" *ngFor="let result of results|searchResults:searchedText:searchedType">
+        <img [src]="result.flag" [alt]="result.name" width="300" height="200">
+    </div>
+</div>
