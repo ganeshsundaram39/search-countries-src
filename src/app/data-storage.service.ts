@@ -1,12 +1,12 @@
-import { Injectable } from "@angular/core";
-import { AllInfoHttpService } from "./all-info-http.service";
+import { Injectable } from '@angular/core';
+import { AllInfoHttpService } from './all-info-http.service';
 
-interface shortDataType {
+interface ShortDataType {
   name?: string;
   flag?: string;
 }
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class DataStorageService {
   private _fullDataStore: {}[] = [];
@@ -16,7 +16,7 @@ export class DataStorageService {
 
   processData() {
     this._httpService.getAllData().subscribe(
-      (response: shortDataType[]) => {
+      (response: ShortDataType[]) => {
         this._shortDataStore = response.map(r => {
           return {
             name: r.name,

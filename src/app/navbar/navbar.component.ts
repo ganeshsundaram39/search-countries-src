@@ -1,26 +1,17 @@
-import {
-  Component,
-  OnInit,
-  ViewChild,
-  Input,
-  Output,
-  EventEmitter
-} from "@angular/core";
-import { NgForm } from "../../../node_modules/@angular/forms";
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: "app-navbar",
-  templateUrl: "./navbar.component.html",
-  styleUrls: ["./navbar.component.css"]
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  @Input() searchedText: string = "";
-  @Input() searchedType: string = "All";
-  categories: string[] = ["all", "region", "currency", "language"];
-  showFilter: boolean = true;
+  @Input() searchedText: string;
+  @Input() searchedType = 'All';
+  categories: string[] = ['name', 'region', 'currency', 'language'];
+  showFilter = true;
   @Output() categorySelecting = new EventEmitter<string>();
   @Output() enteringText = new EventEmitter<string>();
-  @ViewChild("f") searchForm: NgForm;
   constructor() {}
   ngOnInit() {}
   onSubmit() {}

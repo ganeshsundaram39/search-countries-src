@@ -1,24 +1,23 @@
 <div class="navbar">
-    <form (ngSubmit)="onSubmit()" #f="ngForm">
-        <div class="search__container">
-            <div class="search__input--wrapper">
-                <input type="text" name="search" [(ngModel)]="searchedText" placeholder="Search" (keyup)="userEnteringText()" (change)="userEnteringText()"
-                    autofocus>
-                <a type="submit">
-                    <i class="icon-right"></i>
-                </a>
-            </div>
-            <button class="filter" (click)="showFilter=!showFilter">Filter
-                <i class="icon-filter"></i>
-            </button>
-        </div>
-        <div class="filter__container" [ngClass]={show__filter:showFilter}>
-            <!-- radio buttons to select category -->
-            <div *ngFor="let category of categories" class="category__radio">
-                <label [for]="category" [ngClass]="{'category__selected':searchedType==category,'category__not--selected':searchedType!=category}">
-                    <input type="radio" [value]="category" [(ngModel)]="searchedType" [id]="category" name="category" (change)="userSelectingCategory()"> {{category}}
-                </label>
-            </div>
-        </div>
-    </form>
+  <form (ngSubmit)="onSubmit()">
+    <div class="search__container">
+      <div class="search__input--wrapper">
+        <input type="text" name="search" [(ngModel)]="searchedText" placeholder="Search" #search autofocus>
+        <a type="submit">
+          <i class="icon-right"></i>
+        </a>
+      </div>
+      <button class="filter" (click)="showFilter=!showFilter">Filter
+        <i class="icon-filter"></i>
+      </button>
+    </div>
+    <div class="filter__container" [ngClass]={show__filter:showFilter}>
+      <!-- radio buttons to select category -->
+      <div *ngFor="let category of categories" class="category__radio">
+        <label [for]="category" [ngClass]="{'category__selected':searchedType==category,'category__not--selected':searchedType!=category}">
+          <input type="radio" [value]="category" [(ngModel)]="searchedType" [id]="category" name="category" (change)="userSelectingCategory()"> {{category}}
+        </label>
+      </div>
+    </div>
+  </form>
 </div>

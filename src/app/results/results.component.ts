@@ -1,33 +1,34 @@
-import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Params } from "../../../node_modules/@angular/router";
-import { DataStorageService } from "../data-storage.service";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '../../../node_modules/@angular/router';
+import { DataStorageService } from '../data-storage.service';
+import 'rxjs';
 
 @Component({
-  selector: "app-results",
-  templateUrl: "./results.component.html",
-  styleUrls: ["./results.component.css"]
+  selector: 'app-results',
+  templateUrl: './results.component.html',
+  styleUrls: ['./results.component.css']
 })
 export class ResultsComponent implements OnInit {
-  searchedText: string = "";
-  searchedType: string = "";
+  searchedText = '';
+  searchedType = '';
   results: {}[] = [];
-  showLoader: boolean = true;
+  showLoader = true;
   constructor(
     private activateRoute: ActivatedRoute,
     private _dataStore: DataStorageService
   ) {}
 
   ngOnInit() {
-    this.searchedType = this.activateRoute.snapshot.params["filter"];
+    this.searchedType = this.activateRoute.snapshot.params['filter'];
     // get query parameter q if changed afterwards
     this.activateRoute.params.subscribe((params: Params) => {
-      this.searchedType = params["filter"];
+      this.searchedType = params['filter'];
     });
 
-    this.searchedText = this.activateRoute.snapshot.queryParams["q"];
+    this.searchedText = this.activateRoute.snapshot.queryParams['q'];
     // get query parameter q if changed afterwards
     this.activateRoute.queryParams.subscribe((params: Params) => {
-      this.searchedText = params["q"];
+      this.searchedText = params['q'];
     });
     setTimeout(() => {
       this.showLoader = false;
