@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AllInfoHttpService } from './all-info-http.service';
+import { Subject } from 'rxjs';
 
 interface ShortDataType {
   name?: string;
@@ -11,6 +12,7 @@ interface ShortDataType {
 export class DataStorageService {
   private _fullDataStore: {}[] = [];
   private _shortDataStore: {}[] = [];
+  userQuery = new Subject<{ searchedText: string; searchedType: string }>();
 
   constructor(private _httpService: AllInfoHttpService) {}
 

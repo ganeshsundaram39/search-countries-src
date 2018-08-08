@@ -13,6 +13,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { ResultsComponent } from './results/results.component';
 import { HomeComponent } from './home/home.component';
 import { DetailsComponent } from './details/details.component';
+import { DataStorageService } from './data-storage.service';
+import { AutofocusDirective } from './autofocus.directive';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -29,7 +31,8 @@ const appRoutes: Routes = [
     SearchResultsPipe,
     ResultsComponent,
     HomeComponent,
-    DetailsComponent
+    DetailsComponent,
+    AutofocusDirective
   ],
   imports: [
     BrowserModule,
@@ -40,4 +43,8 @@ const appRoutes: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private _dataStore: DataStorageService) {
+    this._dataStore.processData();
+  }
+}

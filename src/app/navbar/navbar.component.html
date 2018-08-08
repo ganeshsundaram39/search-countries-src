@@ -1,11 +1,12 @@
 <div class="navbar">
-  <form (ngSubmit)="onSubmit()">
+  <form>
     <div class="search__container">
       <div class="search__input--wrapper">
-        <input type="text" name="search" [(ngModel)]="searchedText" placeholder="Search" #search autofocus>
-        <a type="submit">
-          <i class="icon-right"></i>
-        </a>
+        <span class="search__icon">
+          <i class="icon-search"></i>
+        </span>
+        <input type="text" name="search" [(ngModel)]="searchedText" placeholder="Search" (ngModelChange)="userQuerying()" #search
+          autofocus>
       </div>
       <button class="filter" (click)="showFilter=!showFilter">Filter
         <i class="icon-filter"></i>
@@ -15,7 +16,7 @@
       <!-- radio buttons to select category -->
       <div *ngFor="let category of categories" class="category__radio">
         <label [for]="category" [ngClass]="{'category__selected':searchedType==category,'category__not--selected':searchedType!=category}">
-          <input type="radio" [value]="category" [(ngModel)]="searchedType" [id]="category" name="category" (change)="userSelectingCategory()"> {{category}}
+          <input type="radio" [value]="category" [(ngModel)]="searchedType" [id]="category" name="category" (ngModelChange)="userQuerying()"> {{category}}
         </label>
       </div>
     </div>

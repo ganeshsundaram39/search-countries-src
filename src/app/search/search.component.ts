@@ -1,11 +1,4 @@
-import {
-  Component,
-  OnInit,
-  ViewChild,
-  Output,
-  EventEmitter
-} from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { DataStorageService } from '../data-storage.service';
 
 @Component({
@@ -22,7 +15,6 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
     this.results = this._dataStore.shortDataStore;
   }
-  onSubmit() {}
   closeSearch() {
     this.closedClicked.emit(false);
   }

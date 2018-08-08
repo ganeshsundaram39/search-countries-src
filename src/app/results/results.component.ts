@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '../../../node_modules/@angular/router';
 import { DataStorageService } from '../data-storage.service';
-import 'rxjs';
 
+interface UserQuery {
+  searchedText: string;
+  searchedType: string;
+}
 @Component({
   selector: 'app-results',
   templateUrl: './results.component.html',
@@ -13,6 +16,7 @@ export class ResultsComponent implements OnInit {
   searchedType = '';
   results: {}[] = [];
   showLoader = true;
+  timer;
   constructor(
     private activateRoute: ActivatedRoute,
     private _dataStore: DataStorageService
@@ -34,14 +38,14 @@ export class ResultsComponent implements OnInit {
       this.showLoader = false;
       this.results = this._dataStore.longDataStore;
     }, 2000);
-  }
-  userEnteringText(searchedText: string): void {
-    // get searched text from navbar component using component event binding
-    this.searchedText = searchedText;
-  }
 
-  userSelectingCategory(searchedType: string): void {
-    // get selected category from navbar component using component event binding
-    this.searchedType = searchedType;
+    // debounce
+    this._dataStore.userQuery.subscribe((userQuery: UserQuery) => {
+      window.clearTimeout(this.timer);
+      this.timer = window.setTimeout(() => {
+        this.searchedText = userQuery.searchedText;
+        this.searchedType = userQuery.searchedType;
+      }, 1000);
+    });
   }
 }

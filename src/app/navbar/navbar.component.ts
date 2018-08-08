@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { DataStorageService } from '../data-storage.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,19 +11,15 @@ export class NavbarComponent implements OnInit {
   @Input() searchedType = 'All';
   categories: string[] = ['name', 'region', 'currency', 'language'];
   showFilter = true;
-  @Output() categorySelecting = new EventEmitter<string>();
-  @Output() enteringText = new EventEmitter<string>();
-  constructor() {}
+
+  constructor(private _dataStore: DataStorageService) {}
   ngOnInit() {}
   onSubmit() {}
-  userEnteringText() {
+  userQuerying() {
     // emit the entered text by user
-    this.enteringText.emit(this.searchedText);
-  }
-
-  userSelectingCategory() {
-    // emit the selected category by user
-    console.log(this.searchedType);
-    this.categorySelecting.emit(this.searchedType);
+    this._dataStore.userQuery.next({
+      searchedText: this.searchedText,
+      searchedType: this.searchedType
+    });
   }
 }
