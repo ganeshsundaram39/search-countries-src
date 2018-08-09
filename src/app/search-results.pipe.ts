@@ -37,7 +37,6 @@ export class SearchResultsPipe implements PipeTransform {
         )
       );
     }
-
     return value.filter(v =>
       v[searchedType].match(new RegExp(searchedText, 'gi'))
     );

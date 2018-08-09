@@ -1,14 +1,77 @@
 .results {
-  margin-top: 2%;
+  padding-top: 2%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  background: rgba(0, 0, 0, 0.05);
+  justify-content: space-evenly;
+  min-height: 90vh;
 }
 
 .card {
-  width: 400px;
-  height: 300px;
+  margin: 2%;
+  padding: 2%;
+  width: 450px;
+  box-shadow: 0px 2px 6px 0 rgba(0, 0, 0, 0.18);
+  background: #fff;
+  border-radius: 5px;
 }
+
+.country__name {
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 2% 0;
+}
+img {
+  border: 1px solid #9e9e9e33;
+  width: 100%;
+}
+
+.capital,
+.timezone,
+.region,
+.sub {
+  margin: 5% 0;
+  letter-spacing: 2px;
+}
+
+.region .name {
+  outline: 0;
+  letter-spacing: 2px;
+  transition: box-shadow 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  box-shadow: inset 0 -6px 0 0 rgba(49, 103, 47, 0.8);
+  cursor: pointer;
+}
+
+.region .name:hover {
+  box-shadow: inset 0 -30px 0 0 rgba(49, 103, 47, 0.8);
+}
+
+i[class$='solid']:before {
+  color: rgba(0, 0, 0, 0.4);
+  margin-right: 2%;
+}
+
+.more {
+  border: 0;
+  outline: 0;
+  padding: 6px 12px;
+  color: var(--base);
+  background: rgba(49, 103, 47, 0.2);
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-bottom: 2px solid rgba(49, 103, 47, 0.5);
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 2px;
+}
+
+.more:active {
+  transform: translateY(2px);
+  border-bottom-color: #fff;
+}
+
 .loader {
   text-align: center;
   margin-top: 10%;

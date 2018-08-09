@@ -10,7 +10,7 @@
   </a>
 </form>
 <div class="search__results">
-  <div class="result" *ngFor="let result of results|searchResults:searchedText:'name'|slice:0:10" [routerLink]="['/details',result.name]">
+  <div class="result" *ngFor="let result of results|searchResults:searchedText:'name'|slice:0:10" [routerLink]="['/details',result.alpha3Code]">
     <img [src]="result.flag" [alt]="result.name">
     <span class="name">{{result.name}}</span>
   </div>

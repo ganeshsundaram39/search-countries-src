@@ -5,6 +5,7 @@ import { Subject } from 'rxjs';
 interface ShortDataType {
   name?: string;
   flag?: string;
+  alpha3Code?: string;
 }
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,8 @@ export class DataStorageService {
         this._shortDataStore = response.map(r => {
           return {
             name: r.name,
-            flag: r.flag
+            flag: r.flag,
+            alpha3Code: r.alpha3Code.toLowerCase()
           };
         });
 

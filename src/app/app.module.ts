@@ -19,7 +19,7 @@ import { AutofocusDirective } from './autofocus.directive';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'results/:filter', component: ResultsComponent },
-  { path: 'details/:name', component: DetailsComponent }
+  { path: 'details/:alpha3Code', component: DetailsComponent }
 ];
 
 @NgModule({

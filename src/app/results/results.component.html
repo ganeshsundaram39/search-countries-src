@@ -1,10 +1,21 @@
 <app-navbar [searchedText]="searchedText" [searchedType]="searchedType"></app-navbar>
 
-<div class="loader" *ngIf="showLoader">
-  <i class="icon-spin5"></i>
-</div>
 <div class="results">
+  <div class="loader" *ngIf="showLoader">
+    <i class="icon-spin5"></i>
+  </div>
   <div class="card" *ngFor="let result of results|searchResults:searchedText:searchedType">
-    <img [src]="result.flag" [alt]="result.name" width="300" height="200">
+    <img [src]="result.flag" [alt]="result.name" height="200">
+    <div class="country__name">{{result.name}}</div>
+    <div class="capital">
+      <i class="icon-map-marker-solid"></i>{{result.capital}}</div>
+    <div class="timezone">
+      <i class="icon-clock-solid"></i>{{result.timezones}}</div>
+    <div class="region">
+      <i class="icon-globe-solid"></i>
+      <span class="name" [routerLink]="['/results','region']" [queryParams]="{q:result.region.toLowerCase()}">{{result.region}}</span>
+      <span class="sub">({{result.subregion}})</span>
+    </div>
+    <button class="more" [routerLink]="['/details',result.alpha3Code.toLowerCase()]">More Info</button>
   </div>
 </div>
