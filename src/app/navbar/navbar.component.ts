@@ -8,7 +8,7 @@ import { DataStorageService } from '../data-storage.service';
 })
 export class NavbarComponent implements OnInit {
   @Input() searchedText: string;
-  @Input() searchedType = 'All';
+  @Input() searchedType = 'name';
   categories: string[] = ['name', 'region', 'currency', 'language'];
   showFilter = true;
 

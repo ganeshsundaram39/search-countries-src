@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '../../../node_modules/@angular/router';
 import { DataStorageService } from '../data-storage.service';
-
-interface UserQuery {
-  searchedText: string;
-  searchedType: string;
-}
+import { UserQuery } from '../shared';
 @Component({
   selector: 'app-results',
   templateUrl: './results.component.html',

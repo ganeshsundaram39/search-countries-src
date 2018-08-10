@@ -1,19 +1,14 @@
 import { Injectable } from '@angular/core';
 import { AllInfoHttpService } from './all-info-http.service';
 import { Subject } from 'rxjs';
-
-interface ShortDataType {
-  name?: string;
-  flag?: string;
-  alpha3Code?: string;
-}
+import { ShortDataType, UserQuery } from './shared';
 @Injectable({
   providedIn: 'root'
 })
 export class DataStorageService {
   private _fullDataStore: {}[] = [];
-  private _shortDataStore: {}[] = [];
-  userQuery = new Subject<{ searchedText: string; searchedType: string }>();
+  private _shortDataStore: ShortDataType[] = [];
+  userQuery = new Subject<UserQuery>();
 
   constructor(private _httpService: AllInfoHttpService) {}
 
@@ -38,7 +33,7 @@ export class DataStorageService {
   get longDataStore(): {}[] {
     return this._fullDataStore;
   }
-  get shortDataStore(): {}[] {
+  get shortDataStore(): ShortDataType[] {
     return this._shortDataStore;
   }
 }

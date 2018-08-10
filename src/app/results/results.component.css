@@ -19,33 +19,48 @@
 .country__name {
   font-size: 2rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
   color: rgba(0, 0, 0, 0.8);
-  margin: 2% 0;
 }
-img {
-  border: 1px solid #9e9e9e33;
+.flag {
+  border: 1px solid #69676733;
   width: 100%;
+  background: rgba(0, 0, 0, 0.05);
 }
-
+.country__name,
 .capital,
-.timezone,
+.timezones,
 .region,
-.sub {
+.sub,
+.more {
   margin: 5% 0;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
 }
 
+.timezones,
+.region {
+  display: flex;
+}
+.timezone {
+  display: inline-block;
+  letter-spacing: 3px;
+  word-break: break-word;
+  margin-left: 2%;
+}
+
+.region .container {
+  margin-left: 2%;
+}
 .region .name {
   outline: 0;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   transition: box-shadow 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  box-shadow: inset 0 -6px 0 0 rgba(49, 103, 47, 0.8);
+  box-shadow: inset 0 -3px 0 0 rgba(49, 103, 47, 0.6);
   cursor: pointer;
+  padding-bottom: 1%;
 }
 
 .region .name:hover {
-  box-shadow: inset 0 -30px 0 0 rgba(49, 103, 47, 0.8);
+  box-shadow: inset 0 -12px 0 0 rgba(49, 103, 47, 0.5);
 }
 
 i[class$='solid']:before {
@@ -62,12 +77,11 @@ i[class$='solid']:before {
   border-radius: 5px;
   text-transform: uppercase;
   cursor: pointer;
-  border-bottom: 2px solid rgba(49, 103, 47, 0.5);
+  border-bottom: 2px solid rgba(49, 103, 47, 0.6);
   transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
-  letter-spacing: 2px;
 }
 
-.more:active {
+.more:hover {
   transform: translateY(2px);
   border-bottom-color: #fff;
 }
