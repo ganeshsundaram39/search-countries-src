@@ -16,6 +16,10 @@ import { DetailsComponent } from './details/details.component';
 import { DataStorageService } from './data-storage.service';
 import { AutofocusDirective } from './autofocus.directive';
 
+// add these imports
+import { AgmCoreModule } from '@agm/core';
+import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
+
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'results/:filter', component: ResultsComponent },
@@ -38,13 +42,18 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AgmCoreModule.forRoot({
+      apiKey: ''
+    }),
+    AgmSnazzyInfoWindowModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
   constructor(private _dataStore: DataStorageService) {
+    console.log('hello');
     this._dataStore.processData();
   }
 }

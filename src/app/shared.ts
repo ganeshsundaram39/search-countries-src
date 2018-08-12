@@ -7,3 +7,10 @@ export interface ShortDataType {
   flag?: string;
   alpha3Code?: string;
 }
+
+export interface Country {
+  name?: string;
+  alpha3Code?: string;
+  flag?: string;
+  latlng?: number[];
+}

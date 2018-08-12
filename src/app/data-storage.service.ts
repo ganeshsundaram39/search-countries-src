@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AllInfoHttpService } from './all-info-http.service';
 import { Subject } from 'rxjs';
-import { ShortDataType, UserQuery } from './shared';
+import { ShortDataType, UserQuery, Country } from './shared';
 @Injectable({
   providedIn: 'root'
 })
@@ -23,14 +23,14 @@ export class DataStorageService {
           };
         });
 
-        this._fullDataStore.push(...response);
+        this._fullDataStore = response;
       },
       error => {
         console.log(error);
       }
     );
   }
-  get longDataStore(): {}[] {
+  get longDataStore(): Country[] {
     return this._fullDataStore;
   }
   get shortDataStore(): ShortDataType[] {

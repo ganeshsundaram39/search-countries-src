@@ -1,5 +1,5 @@
 .wrapper {
-  padding: 10% 0;
+  padding: 5% 0;
   background: rgba(0, 0, 0, 0.05);
 }
 
@@ -7,7 +7,7 @@
   width: 80%;
   margin: 0 auto;
   max-width: 1000px;
-  min-height: 100vh;
+  min-height: 120vh;
   box-shadow: 0px 2px 6px 0 rgba(0, 0, 0, 0.18);
   background: #fff;
   padding: 2%;
@@ -16,8 +16,10 @@
 
 .nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 1%;
 }
 
 .back {
@@ -32,7 +34,9 @@
   border-bottom: 2px solid rgba(49, 103, 47, 0.6);
   transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+.icon-back:before {
+  color: var(--base);
+}
 .back:hover {
   transform: translateY(2px);
   border-bottom-color: #fff;
@@ -47,8 +51,35 @@
   color: var(--base);
 }
 
-.maps {
-  height: 350px;
-  background: #ccc;
-  margin-top: 2%;
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 4% 0;
+}
+
+.name {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  word-wrap: break-word;
+  color: rgba(0, 0, 0, 0.8);
+}
+.header img {
+  width: 50%;
+  height: 250px;
+  display: inline-block;
+}
+.cards__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.names,
+.language {
+  flex: 0 0 35%;
+  box-shadow: 0px 2px 6px 0 rgba(0, 0, 0, 0.18);
+  min-height: 250px;
+  padding: 2%;
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '../../../node_modules/@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { DataStorageService } from '../data-storage.service';
 import { UserQuery } from '../shared';
 @Component({

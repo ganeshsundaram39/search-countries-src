@@ -19,7 +19,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/assets/icons/css/fontello.css", "src/styles.css"],
+            "styles": ["src/assets/icons/css/fontello.css", "src/styles.css","./node_modules/snazzy-info-window/dist/snazzy-info-window.css"],
             "scripts": []
           },
           "configurations": {

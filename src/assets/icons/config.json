@@ -79,6 +79,12 @@
       ]
     },
     {
+      "uid": "3ba4275937db277075fc47d6b5a69a2e",
+      "css": "back",
+      "code": 59397,
+      "src": "entypo"
+    },
+    {
       "uid": "ef73a0080d5b9556cb0eeb9350b5ff73",
       "css": "react-brands",
       "code": 59394,
