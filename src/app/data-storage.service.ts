@@ -6,7 +6,7 @@ import { ShortDataType, UserQuery, Country } from './shared';
   providedIn: 'root'
 })
 export class DataStorageService {
-  private _fullDataStore: {}[] = [];
+  private _fullDataStore: Country[] = [];
   private _shortDataStore: ShortDataType[] = [];
   userQuery = new Subject<UserQuery>();
 
@@ -14,7 +14,7 @@ export class DataStorageService {
 
   processData() {
     this._httpService.getAllData().subscribe(
-      (response: ShortDataType[]) => {
+      (response: Country[]) => {
         this._shortDataStore = response.map(r => {
           return {
             name: r.name,
