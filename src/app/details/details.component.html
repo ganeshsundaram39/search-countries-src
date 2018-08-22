@@ -11,22 +11,91 @@
         <div class="name">{{searchedData.name}}</div>
         <img [src]="searchedData.flag" [alt]="searchedData.name.toLowerCase()">
       </div>
-      <agm-map style="height: 300px" [latitude]="searchedData.latlng[0]" [longitude]="searchedData.latlng[1]">
-        <agm-marker [latitude]="51.673858" [longitude]="7.815982">
-          <agm-snazzy-info-window [maxWidth]="200" [closeWhenOthersOpen]="true">
-            <ng-template>
-              My first Snazzy Info Window!
-            </ng-template>
-          </agm-snazzy-info-window>
-        </agm-marker>
-      </agm-map>
+      <div class="map">
+        <agm-map [gestureHandling]="'coopeative'" [zoom]="5" [scrollwheel]="null" style="height: 400px" [latitude]="searchedData.latlng[0]"
+          [longitude]="searchedData.latlng[1]">
+          <agm-marker [latitude]="51.673858" [longitude]="7.815982">
+            <agm-snazzy-info-window [maxWidth]="200" [closeWhenOthersOpen]="true">
+              <ng-template>
+                My first Snazzy Info Window!
+              </ng-template>
+            </agm-snazzy-info-window>
+          </agm-marker>
+        </agm-map>
+      </div>
       <div class="cards__container">
-        <div class="names">
-          <span class="label">Names</span>
-
+        <div class="common names">
+          <div class="label">Names</div>
+          <div class="key">Common:</div>
+          <div class="value">{{searchedData.name}}</div>
+          <div class="key">Common (Native):</div>
+          <div class="value">{{searchedData.nativeName}}</div>
+          <div class="key">Alternative spellings:</div>
+          <div class="value">
+            <div *ngFor="let spelling of searchedData.altSpellings">{{spelling}}</div>
+          </div>
+          <div class="key translations">Translations:<a (click)="toggleTranslations()">{{toggleText}}</a></div>
+          <div *ngIf="showTranslations">
+            <div class="translation" *ngFor="let key of searchedData.translations|keys">
+              <div class="key">{{key}}:</div>
+              <div class="value">{{searchedData.translations[key]}}</div>
+            </div>
+          </div>
         </div>
-        <div class="language">
-          <span class="label">Language</span>
+        <div class="common language">
+          <div class="label">Language</div>
+          <div class="key header">Name</div>
+          <div class="value header">Native Name</div>
+          <div *ngFor="let language of searchedData.languages">
+            <div class="key row">{{language.name}}</div>
+            <div class="value row">{{language.nativeName}}</div>
+          </div>
+        </div>
+        <div class="common codes">
+          <div class="label">Codes</div>
+          <div class="key">ISO 3166-1 alpha-2</div>
+          <div class="value">{{searchedData.alpha2Code}}</div>
+          <div class="key">ISO 3166-1 alpha-3</div>
+          <div class="value">{{searchedData.alpha3Code}}</div>
+          <div class="key">ISO 3166-1 numeric</div>
+          <div class="value">{{searchedData.numericCode}}</div>
+          <div class="key">International calling code</div>
+          <div class="value">{{searchedData.callingCodes}}</div>
+          <div class="key">ISO 4217 currency code</div>
+          <div class="value">
+            <div class="currency" *ngFor="let currency of searchedData.currencies">
+              {{currency.name}}(<span>{{currency.code}}</span>)
+            </div>
+          </div>
+          <div class="key">Top level domain</div>
+          <div class="value">{{searchedData.topLevelDomain}}</div>
+        </div>
+        <div class="common geography">
+          <div class="label">Geography</div>
+          <div class="key">Region:</div>
+          <div class="value">{{searchedData.region}}</div>
+          <div class="key">Subregion:</div>
+          <div class="value">{{searchedData.subregion}}</div>
+          <div class="key">Capital:</div>
+          <div class="value">{{searchedData.capital}}</div>
+          <div class="key">Demonym:</div>
+          <div class="value">{{searchedData.demonym}}</div>
+          <div class="key">Lat/Lng:</div>
+          <div class="value">{{searchedData.latlng}}</div>
+          <div class="key">Area:</div>
+          <div class="value">{{searchedData.area}}km²</div>
+          <div class="key">Land borders:</div>
+          <div class="value">
+            <div *ngFor="let border of searchedData.borders">{{border}}</div>
+          </div>
+          <div class="key">Regional Blocs:</div>
+          <div class="value">
+            <div *ngFor="let bloc of searchedData.regionalBlocs">{{bloc.acronym}}</div>
+          </div>
+          <div class="key">Timezones:</div>
+          <div class="value">{{searchedData.timezones}}</div>
+          <div class="key">Population:</div>
+          <div class="value">{{population}}</div>
         </div>
       </div>
     </div>

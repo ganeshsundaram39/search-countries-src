@@ -19,6 +19,7 @@ import { AutofocusDirective } from './autofocus.directive';
 // add these imports
 import { AgmCoreModule } from '@agm/core';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
+import { KeysPipe } from './keys.pipe';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -36,7 +37,8 @@ const appRoutes: Routes = [
     ResultsComponent,
     HomeComponent,
     DetailsComponent,
-    AutofocusDirective
+    AutofocusDirective,
+    KeysPipe
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,8 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     AgmCoreModule.forRoot({
-      apiKey: ''
+      apiKey: '',
+      apiVersion: '3.31'
     }),
     AgmSnazzyInfoWindowModule
   ],
