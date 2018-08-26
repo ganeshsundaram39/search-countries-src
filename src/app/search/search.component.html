@@ -3,7 +3,7 @@
     <i class="icon-cancel"></i>
   </a>
 </div>
-<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+<form (ngSubmit)="onSubmit()" #f="ngForm">
   <input type="text" name="search" [(ngModel)]="searchedText" placeholder="Type-in a Country" autofocus>
   <a type="submit" [routerLink]="['/results','name']" [queryParams]="{q:searchedText}">
     <i class="icon-right"></i>

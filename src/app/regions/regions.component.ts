@@ -13,6 +13,6 @@ export class RegionsComponent implements OnInit {
     this.regions = ['americas', 'europe', 'africa', 'asia', 'oceania'];
   }
 
-  getImage = region => `../assets/regions/${region}.svg`;
+  getImage = region => `./assets/regions/${region}.svg`;
   getAlt = region => `region ${region}`;
 }
