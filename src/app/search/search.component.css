@@ -15,25 +15,26 @@
   color: #fff;
 }
 form {
-  margin: 15% 0 0 0;
+  margin: 20% 0 0 0;
   text-align: center;
 }
-[name="search"] {
+
+[name='search'] {
   padding-bottom: 1%;
   background: transparent;
   border: 0;
   outline: 0;
   border-bottom: 2px solid #fff;
-  width: 50%;
+  width: 80%;
 }
-[type="submit"] {
+[type='submit'] {
   display: inline-block;
   transform: translateX(-100%);
 }
-[name="search"],
-[type="submit"] i {
+[name='search'],
+[type='submit'] i {
   color: #fff;
-  font-size: 2rem;
+  font-size: 1.3rem;
   letter-spacing: 5px;
   text-transform: capitalize;
 }
@@ -74,4 +75,38 @@ form {
   display: inline-block;
   font-size: 0.9rem;
   color: #fff;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  [name='search'] {
+    width: 60%;
+  }
+  [name='search'],
+  [type='submit'] i {
+    font-size: 1.5rem;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  [name='search'],
+  [type='submit'] i {
+    font-size: 1.7rem;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  form {
+    margin: 15% 0 0 0;
+  }
+
+  [name='search'] {
+    width: 50%;
+  }
+  [name='search'],
+  [type='submit'] i {
+    font-size: 2rem;
+  }
 }

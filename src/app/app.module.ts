@@ -56,7 +56,6 @@ const appRoutes: Routes = [
 })
 export class AppModule {
   constructor(private _dataStore: DataStorageService) {
-    console.log('hello');
     this._dataStore.processData();
   }
 }

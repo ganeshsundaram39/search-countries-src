@@ -6,13 +6,31 @@
   align-items: center;
 }
 .region img {
-  width: 400px;
-  height: 400px;
+  width: 200px;
+  height: 200px;
 }
 .middle {
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .region img {
+    width: 300px;
+    height: 300px;
+  }
+}
+@media (min-width: 768px) {
+  .region img {
+    width: 400px;
+    height: 400px;
+  }
+  .middle {
+    flex-direction: row;
+  }
+}
+
 .name {
   font-size: 3rem;
   text-transform: capitalize;

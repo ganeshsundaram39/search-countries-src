@@ -35,8 +35,8 @@ export class ResultsComponent implements OnInit {
       this.results = this._dataStore.longDataStore;
     }, 2000);
 
-    // debounce
     this._dataStore.userQuery.subscribe((userQuery: UserQuery) => {
+      // debounce
       window.clearTimeout(this.timer);
       this.timer = window.setTimeout(() => {
         this.searchedText = userQuery.searchedText;

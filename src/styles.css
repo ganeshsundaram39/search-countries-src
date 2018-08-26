@@ -1,12 +1,37 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:400");
+@import url('https://fonts.googleapis.com/css?family=Roboto:400');
 
 * {
   margin: 0;
   padding: 0;
-  font: 400 20px "Roboto", sans-serif;
+  font: 400 16px 'Roboto', sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   color: #555;
   box-sizing: border-box;
   --base: #31672f;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  * {
+    font-size: 18px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  * {
+    font-size: 20px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
 }

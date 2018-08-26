@@ -44,36 +44,36 @@
         </div>
         <div class="common language">
           <div class="label">Language</div>
-          <div class="key header">Name</div>
-          <div class="value header">Native Name</div>
+          <div class="key name">Name:</div>
+          <div class="value native__name">Native Name:</div>
           <div *ngFor="let language of searchedData.languages">
-            <div class="key row">{{language.name}}</div>
+            <div class="key row"><a class="router__link" [routerLink]="['/results','language']" [queryParams]="{q:(language.name||'').toLowerCase()}">{{language.name}}</a></div>
             <div class="value row">{{language.nativeName}}</div>
           </div>
         </div>
         <div class="common codes">
           <div class="label">Codes</div>
-          <div class="key">ISO 3166-1 alpha-2</div>
+          <div class="key">ISO 3166-1 alpha-2:</div>
           <div class="value">{{searchedData.alpha2Code}}</div>
-          <div class="key">ISO 3166-1 alpha-3</div>
+          <div class="key">ISO 3166-1 alpha-3:</div>
           <div class="value">{{searchedData.alpha3Code}}</div>
-          <div class="key">ISO 3166-1 numeric</div>
+          <div class="key">ISO 3166-1 numeric:</div>
           <div class="value">{{searchedData.numericCode}}</div>
-          <div class="key">International calling code</div>
+          <div class="key">International calling code:</div>
           <div class="value">{{searchedData.callingCodes}}</div>
-          <div class="key">ISO 4217 currency code</div>
+          <div class="key">ISO 4217 currency code:</div>
           <div class="value">
             <div class="currency" *ngFor="let currency of searchedData.currencies">
-              {{currency.name}}(<span>{{currency.code}}</span>)
+              <a class="router__link" [routerLink]="['/results','currency']" [queryParams]="{q:(currency.code||'').toLowerCase()}">{{currency.name}}</a>(<span>{{currency.code}}</span>)
             </div>
           </div>
-          <div class="key">Top level domain</div>
+          <div class="key">Top level domain:</div>
           <div class="value">{{searchedData.topLevelDomain}}</div>
         </div>
         <div class="common geography">
           <div class="label">Geography</div>
           <div class="key">Region:</div>
-          <div class="value">{{searchedData.region}}</div>
+          <div class="value"><a class="router__link" [routerLink]="['/results','region']" [queryParams]="{q:(searchedData.region||'').toLowerCase()}">{{searchedData.region}}</a></div>
           <div class="key">Subregion:</div>
           <div class="value">{{searchedData.subregion}}</div>
           <div class="key">Capital:</div>

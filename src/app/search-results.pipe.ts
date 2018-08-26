@@ -8,7 +8,6 @@ export class SearchResultsPipe implements PipeTransform {
     if (!searchedText) {
       return null;
     }
-
     if (
       searchedType !== 'name' &&
       searchedType !== 'region' &&

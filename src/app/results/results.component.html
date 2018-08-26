@@ -16,7 +16,7 @@
     <div class="region">
       <i class="icon-globe-solid"></i>
       <div class="container">
-        <span class="name" [routerLink]="['/results','region']" [queryParams]="{q:result.region.toLowerCase()}">{{result.region}}</span>
+        <span class="name" [routerLink]="['/results','region']" [queryParams]="{q:(result.region||'').toLowerCase()}">{{result.region}}</span>
         <span class="sub">({{result.subregion}})</span>
       </div>
     </div>

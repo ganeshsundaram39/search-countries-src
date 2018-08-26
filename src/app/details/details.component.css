@@ -5,7 +5,6 @@
 }
 
 .details__container {
-  width: 90%;
   margin: 0 auto;
   max-width: 1000px;
   min-height: 120vh;
@@ -56,19 +55,21 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-direction: column;
   margin: 3% 0;
+  height: 80vh;
 }
 
-.name {
+.header .name {
   font-size: 2.5rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   word-wrap: break-word;
-  color: rgba(0, 0, 0, 0.8);
+  text-align: center;
 }
 .header img {
-  width: 50%;
-  height: 300px;
+  width: 100%;
+  height: 200px;
   display: inline-block;
 }
 
@@ -82,7 +83,7 @@
 }
 
 .common {
-  flex: 0 0 45%;
+  flex: 0 0 100%;
   box-shadow: 0px 2px 6px 0 rgba(0, 0, 0, 0.18);
   height: 2%;
   padding: 2%;
@@ -100,33 +101,48 @@
 
 .label {
   font-size: 1.5rem;
-  color: rgba(0, 0, 0, 0.8);
 }
 .key {
   font-size: 0.8rem;
-  color: rgba(0, 0, 0, 0.9);
   border-left: 2px dotted rgba(0, 0, 0, 0.9);
   padding-left: 4%;
 }
 
 .value {
-  color: rgba(0, 0, 0, 0.8);
   border-right: 2px dotted rgba(0, 0, 0, 0.8);
   padding-right: 4%;
   text-align: right;
 }
 
+.label,
+.value,
+.key,
+.row,
+.name,
 .value * {
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.9);
+}
+.router__link {
+  color: rgba(0, 0, 0, 0.9);
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: box-shadow 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  box-shadow: inset 0 -3px 0 0 rgba(49, 103, 47, 0.6);
+  cursor: pointer;
+  padding-bottom: 1%;
 }
 
-.header {
+.router__link:hover {
+  box-shadow: inset 0 -12px 0 0 rgba(49, 103, 47, 0.5);
+}
+
+.language .name,
+.language .native__name {
   font-size: 0.8rem;
   color: rgba(0, 0, 0, 0.8);
 }
 .row {
   font-size: 1rem;
-  color: rgba(0, 0, 0, 0.9);
 }
 .translations {
   width: 100%;
@@ -143,4 +159,35 @@
 .translation > .key,
 .translation > .value {
   margin: 4% 0;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .details__container {
+    width: 90%;
+  }
+  .header {
+    flex-direction: row;
+    height: auto;
+  }
+  .header .name {
+    text-align: left;
+  }
+  .header img {
+    width: 50%;
+    height: 300px;
+  }
+  .common {
+    flex: 0 0 60%;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .common {
+    flex: 0 0 45%;
+  }
 }

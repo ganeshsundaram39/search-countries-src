@@ -94,9 +94,9 @@ i[class$='solid']:before {
 .loader i {
   font-size: 1.3rem;
   display: inline-block;
-  -webkit-animation: rotation 2s infinite linear;
+  animation: rotation 2s infinite linear;
 }
-@-webkit-keyframes rotation {
+@keyframes rotation {
   from {
     -webkit-transform: rotate(0deg);
   }
