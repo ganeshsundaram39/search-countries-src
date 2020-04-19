@@ -10,11 +10,11 @@ export class NavbarComponent implements OnInit {
   @Input() searchedText: string;
   @Input() searchedType = 'name';
   categories: string[] = ['name', 'region', 'currency', 'language'];
-  showFilter = true;
+  showFilter = false;
 
-  constructor(private _dataStore: DataStorageService) {}
-  ngOnInit() {}
-  onSubmit() {}
+  constructor(private _dataStore: DataStorageService) { }
+  ngOnInit() { }
+  onSubmit() { }
   userQuerying() {
     // emit the entered text by user
     this._dataStore.userQuery.next({
