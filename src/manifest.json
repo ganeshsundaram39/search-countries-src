@@ -1,6 +1,6 @@
 {
-  "name": "rest-countries",
-  "short_name": "rest-countries",
+  "name": "search-countries",
+  "short_name": "search-countries",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

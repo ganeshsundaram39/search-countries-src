@@ -51,10 +51,7 @@ const appRoutes: Routes = [
       apiKey: 'AIzaSyDhMVN7GypCP7HhT_3ydc8in7Qm2BDeQM0',
       apiVersion: '3.31'
     }),
-    AgmSnazzyInfoWindowModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', {
-      enabled: environment.production
-    })
+    AgmSnazzyInfoWindowModule
   ],
   providers: [],
   bootstrap: [AppComponent]

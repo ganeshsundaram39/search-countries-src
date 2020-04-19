@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "rest-countries": {
+    "search-countries": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/rest-countries",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -47,25 +47,25 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "serviceWorker": true
+              "serviceWorker": false
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "rest-countries:build"
+            "browserTarget": "search-countries:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "rest-countries:build:production"
+              "browserTarget": "search-countries:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "rest-countries:build"
+            "browserTarget": "search-countries:build"
           }
         },
         "test": {
@@ -97,10 +97,14 @@
               "**/node_modules/**"
             ]
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     },
-    "rest-countries-e2e": {
+    "search-countries-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -108,11 +112,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "rest-countries:serve"
+            "devServerTarget": "search-countries:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "rest-countries:serve:production"
+              "devServerTarget": "search-countries:serve:production"
             }
           }
         },
@@ -128,5 +132,5 @@
       }
     }
   },
-  "defaultProject": "rest-countries"
+  "defaultProject": "search-countries"
 }
