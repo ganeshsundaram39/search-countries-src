@@ -22,6 +22,7 @@ import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 import { KeysPipe } from './keys.pipe';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -51,7 +52,9 @@ const appRoutes: Routes = [
       apiKey: 'AIzaSyDhMVN7GypCP7HhT_3ydc8in7Qm2BDeQM0',
       apiVersion: '3.31'
     }),
-    AgmSnazzyInfoWindowModule
+    AgmSnazzyInfoWindowModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    ScullyLibModule
   ],
   providers: [],
   bootstrap: [AppComponent]

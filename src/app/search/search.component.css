@@ -45,7 +45,7 @@ form {
 
 .search__results {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   width: 80%;
   margin: 2% auto;
   flex-wrap: wrap;
