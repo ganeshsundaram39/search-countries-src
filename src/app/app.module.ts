@@ -53,7 +53,7 @@ const appRoutes: Routes = [
       apiVersion: '3.31'
     }),
     AgmSnazzyInfoWindowModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    // ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     ScullyLibModule
   ],
   providers: [],
